@@ -1,0 +1,2 @@
+OPTIONS="{{ blackbox_exporter_options }}"
+

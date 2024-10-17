@@ -1,0 +1,6 @@
+---
+
+- name: Restart blackbox exporter
+  systemd:
+    name: blackbox_exporter
+    state: restarted

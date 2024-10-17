@@ -1,0 +1,18 @@
+[Unit]
+Description=Blackbox exporter 
+Documentation=https://github.com/prometheus/blackbox_exporter
+After=network-online.target
+
+[Service]
+Type=simple
+User=prometheus
+Group=prometheus
+
+EnvironmentFile=/etc/default/blackbox_exporter
+ExecStart=/usr/sbin/blackbox_exporter $OPTIONS
+
+SyslogIdentifier=blackbox_exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
